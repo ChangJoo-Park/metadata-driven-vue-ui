@@ -5,10 +5,22 @@
     </div>
     <div id="tabs">
       <ul class="inline-list">
-        <li class="tab active">Home</li>
-        <li class="tab">Search</li>
-        <li class="tab">Recent</li>
-        <li class="tab">Setting</li>
+        <li class="tab active">
+          <v-icon name="home"></v-icon>
+          Home
+        </li>
+        <li class="tab">
+          <v-icon name="search"></v-icon>
+          Search
+        </li>
+        <li class="tab">
+          <v-icon name="heart"></v-icon>
+          Recent
+        </li>
+        <li class="tab">
+          <v-icon name="settings"></v-icon>
+          Setting
+        </li>
       </ul>
     </div>
   </div>
@@ -22,7 +34,9 @@ body {
   height: 100vh;
   width: 100vw;
 }
-
+* {
+  box-sizing: border-box;
+}
 #app {
   font-family: "Open Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -46,6 +60,9 @@ body {
   flex: none;
   min-height: 60px;
   height: 60px;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+  border-left: 1px solid black;
 
   .inline-list {
     height: 100%;
@@ -54,6 +71,8 @@ body {
   }
 
   .tab {
+    display: flex;
+    flex-direction: column;
     border-top: 1px solid black;
     border-right: 1px solid black;
 
@@ -61,7 +80,12 @@ body {
       font-weight: bold;
       text-transform: uppercase;
     }
+
+    .icon {
+      width: 24px;
+    }
   }
+
   .tab:last-child {
     border-right: none;
   }
@@ -84,7 +108,7 @@ body {
 
 .widget {
   box-sizing: border-box;
-  border: 1px solid black;
+  margin-bottom: 1rem;
 }
 
 .widget-header {
@@ -107,5 +131,7 @@ body {
 
 .widget-more {
   font-size: 1rem;
+  text-decoration: none;
+  color: #000;
 }
 </style>

@@ -16,13 +16,13 @@ export default {
         }, [
           createElement('h2', {
             class: 'widget-label'
-          }, 'Today'),
-          createElement('a', {
+          }, this.title),
+          this.hasMore ? createElement('a', {
             class: 'widget-more',
             attrs: {
               href: '#'
             }
-          }, 'More')
+          }, 'More') : ''
         ]),
         createElement(WIDGET_TYPE[this.type], {
           class: 'widget-inner',
@@ -34,6 +34,17 @@ export default {
     )
   },
   props: {
-    type: String
+    type: {
+      type: String,
+      default: () => ''
+    },
+    title: {
+      type: String,
+      default: () => ''
+    },
+    'has-more': {
+      type: [Boolean],
+      default: () => false
+    }
   }
 }

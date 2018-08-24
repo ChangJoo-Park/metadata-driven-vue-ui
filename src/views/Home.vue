@@ -1,6 +1,8 @@
 <template>
-  <div class="home page">
-    <widget type="banners"/>
+  <div class='home page'>
+    <widget type='banners' title="" :hasMore="false" />
+    <widget type='grid' title="Today" :hasMore="true"/>
+    <widget type='list' title="Events" :hasMore="true"/>
   </div>
 </template>
 
