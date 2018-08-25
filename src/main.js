@@ -1,10 +1,12 @@
 import Vue from 'vue'
 import feather from 'vue-icon'
+import Vuebar from 'vuebar'
 
 import App from './App.vue'
 import router from './router'
 
 Vue.use(feather, 'v-icon')
+Vue.use(Vuebar)
 
 Vue.config.productionTip = false
 
