@@ -1,40 +1,16 @@
 <template>
   <div>
     <ul class="list">
-      <li class="list-item">
+      <li class="list-item"
+        v-for="(item, index) in items"
+        :key="index"
+      >
         <div class="list-image-wrapper">
-          <img class="list-image" src="//image.goodchoice.kr/resize_1000X500x0/adimg_new/6310/0/5743b189bf666.jpg">
+          <img class="list-image" :src="item.image">
         </div>
         <div class="list-meta">
-          <h3 class="list-header">Hello</h3>
-          <p class="list-description">Lorem Ipsum is simply dummy text of the printing</p>
-        </div>
-      </li>
-      <li class="list-item">
-        <div class="list-image-wrapper">
-          <img class="list-image" src="https://image.goodchoice.kr/resize_1000X500x0/adimg_new/12400/0/586dad5232446.jpg">
-        </div>
-        <div class="list-meta">
-          <h3 class="list-header">Hello</h3>
-          <p class="list-description">Lorem Ipsum is simply dummy text of the printing</p>
-        </div>
-      </li>
-      <li class="list-item">
-        <div class="list-image-wrapper">
-          <img class="list-image" src="https://image.goodchoice.kr/resize_1000X500x0/adimg_new/52083/0/5b07c3bb35e30.jpg">
-        </div>
-        <div class="list-meta">
-          <h3 class="list-header">Hello</h3>
-          <p class="list-description">Lorem Ipsum is simply dummy text of the printing</p>
-        </div>
-      </li>
-      <li class="list-item">
-        <div class="list-image-wrapper">
-          <img class="list-image" src="https://image.goodchoice.kr/resize_1000X500x0/adimg_new/6337/0/578dc0855e11b.jpg">
-        </div>
-        <div class="list-meta">
-          <h3 class="list-header">Hello</h3>
-          <p class="list-description">Lorem Ipsum is simply dummy text of the printing</p>
+          <h3 class="list-header">{{ item.title }}</h3>
+          <p class="list-description">{{ item.description }}</p>
         </div>
       </li>
     </ul>
@@ -42,7 +18,11 @@
 </template>
 
 <script>
-export default {}
+import WidgetBase from './Base'
+
+export default {
+  extends: WidgetBase
+}
 </script>
 
 <style lang="scss" scoped>
