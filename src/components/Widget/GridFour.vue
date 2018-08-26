@@ -4,8 +4,10 @@
       v-for="(item, index) in items"
       :key="index"
     >
-      <v-icon :name="item.image"></v-icon>
-      {{ item.title }}
+      <img class="box-image" :src="item.image" alt="" width="100%;" height="100%;">
+      <h4>
+        {{ item.title }}
+      </h4>
     </div>
   </div>
 </template>
@@ -21,27 +23,23 @@ export default {
 <style lang="scss" scoped>
 .wrapper {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 100px);
-  border: 1px solid black;
-  border-right: none;
-  border-bottom: none;
+  grid-template-columns: repeat(2, 1fr);
 }
 .box {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-right: 1px solid black;
-  border-bottom: 1px solid black;
+  overflow: hidden;
+  padding: .5rem;
 
-  &:last-child {
-    border-right: 1px solid black;
-    border-bottom: 1px solid black;
+  h4 {
+    margin-top: .5rem;
   }
-
-  .icon {
-    width: 40px;
+  img {
+    border-radius: 1rem;
+    height: 100px;
   }
 }
+
 </style>

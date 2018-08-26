@@ -1,27 +1,44 @@
 <template>
   <div id="app">
-    <div id="content" v-bar>
-      <router-view/>
-    </div>
-    <div id="tabs">
-      <ul class="inline-list">
-        <li class="tab active">
-          <v-icon name="home"></v-icon>
-          Home
-        </li>
-        <li class="tab">
-          <v-icon name="search"></v-icon>
-          Search
-        </li>
-        <li class="tab">
-          <v-icon name="heart"></v-icon>
-          Recent
-        </li>
-        <li class="tab">
-          <v-icon name="settings"></v-icon>
-          Setting
-        </li>
-      </ul>
+    <div class="marvel-device iphone-x">
+      <div class="notch">
+          <div class="camera"></div>
+          <div class="speaker"></div>
+      </div>
+      <div class="top-bar"></div>
+      <div class="sleep"></div>
+      <div class="bottom-bar"></div>
+      <div class="volume"></div>
+      <div class="overflow">
+          <div class="shadow shadow--tr"></div>
+          <div class="shadow shadow--tl"></div>
+          <div class="shadow shadow--br"></div>
+          <div class="shadow shadow--bl"></div>
+      </div>
+      <div class="inner-shadow"></div>
+      <div class="screen" v-bar>
+        <router-view/>
+        <div id="tabs">
+          <ul class="inline-list">
+            <li class="tab active">
+              <v-icon name="home"></v-icon>
+              Home
+            </li>
+            <li class="tab">
+              <v-icon name="search"></v-icon>
+              Search
+            </li>
+            <li class="tab">
+              <v-icon name="heart"></v-icon>
+              Recent
+            </li>
+            <li class="tab">
+              <v-icon name="settings"></v-icon>
+              Setting
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -37,26 +54,31 @@ body {
 * {
   box-sizing: border-box;
 }
+
 #app {
   font-family: "Open Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   width: 100%;
   height: 100%;
-  display: flex;
-  flex-direction: column;
 }
 
-#content {
+.screen {
+  background-color: #000 !important;
+  padding-top: 30px;
+  display: flex !important;
+  flex-direction: column;
   flex: 1;
   overflow: hidden;
   .page {
+    background-color: #fff;
     height: 100%;
     overflow-y: scroll;
   }
 }
 
 #tabs {
+  background-color: #fff;
   flex: none;
   min-height: 60px;
   height: 60px;

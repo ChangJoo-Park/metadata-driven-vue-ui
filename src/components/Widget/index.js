@@ -1,6 +1,7 @@
 const WIDGET_TYPE = {
   banners: require('./Banners.vue').default,
   grid: require('./Grid.vue').default,
+  gridfour: require('./GridFour.vue').default,
   list: require('./List.vue').default
 }
 
