@@ -1,4 +1,4 @@
-# metadata-driven-ui
+# server-driven-ui
 
 ## Project setup
 ```
